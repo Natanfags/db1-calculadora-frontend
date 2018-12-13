@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -10,5 +11,20 @@ export class AppComponent {
   numeroDois: number = 10;
   operacao: string = 'SOMA';
 
-  title = 'calculadora-frontend';
+  constructor(private http:HttpClient){}
+
+
+
+  onClickExecutarOperacao(){
+    const calculadora = {
+      operacao: this.operacao,
+      numeroUm: this.numeroUm,
+      numeroDois: this.numeroDois
+    };
+  
+    this
+    .http
+    .post('http://localhost:9090/api/calculadora', calculadora)
+      .subscribe(response => console.log(response));  
+    }
 }
