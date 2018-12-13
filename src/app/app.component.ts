@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  numeroUm: number = 2;
+  numeroDois: number = 10;
+  operacao: string = 'SOMA';
+
   title = 'calculadora-frontend';
 }

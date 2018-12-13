@@ -4,17 +4,17 @@
 
 <div>
   <label for="numeroUm">Informe o número 1</label>
-  <input id="numberUm">
+  <input id="numberUm" type="number" [(ngModel)]="numeroUm">
 </div>
 
 <div>
     <label for="numeroDois">Informe o número 2</label>
-    <input id="numberDois">
+    <input id="numberDois" type="number" [(ngModel)]="numeroDois">
 </div>
 
 <div>
     <label for="operacao">Informe a operaçao</label>
-    <select id="operacao">
+    <select id="operacao" [(ngModel)]="operacao">
       <option value="SOMA">Operação de soma</option>
       <option value="SUBTRACAO">Operação de subtração</option>
       <option value="MULTIPLICACAO">Operação de multiplicação</option>
@@ -26,5 +26,7 @@
   <button style="background: brown">Executar operação</button>
 
 </div>
+
+numeroUm: {{numeroUm}} - numeroDois: {{numeroDois}} - operacao: {{operacao}}
 
 </div>
