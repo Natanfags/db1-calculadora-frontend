@@ -11,9 +11,9 @@ export class AppComponent {
   numeroDois: number = 10;
   operacao: string = 'SOMA';
 
+  response: any = {};
+
   constructor(private http:HttpClient){}
-
-
 
   onClickExecutarOperacao(){
     const calculadora = {
@@ -25,6 +25,6 @@ export class AppComponent {
     this
     .http
     .post('http://localhost:9090/api/calculadora', calculadora)
-      .subscribe(response => console.log(response));  
+      .subscribe(response => this.response = response);  
     }
 }
