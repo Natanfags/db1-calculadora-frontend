@@ -24,7 +24,7 @@ export class AppComponent {
   
     this
     .http
-    .post('http://localhost:9090/api/calculadora', calculadora)
+    .post('https://calculadoranatan.herokuapp.com/api/calculadora', calculadora)
       .subscribe(response => this.response = response);  
     }
 }
